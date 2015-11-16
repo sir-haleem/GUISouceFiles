@@ -1,0 +1,47 @@
+/*
+ *  The programs contain in this file and its associate are
+ *  properties of Indigenous Corp. 
+ *  On any ocassion you need to make modification or
+ *  take some part of this file for personal or organisational use,
+ *  a prior permission is require from Indigenous Corp
+ */
+
+package GUIEcercises;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+/**
+ *
+ * @author Haleem
+ */
+public class Calculator extends JFrame
+{
+    private JTextField resultDisplay;
+    private JButton[] keypads;
+    private String[] keys = { "7", "8", "9", "/", "4", "5", "6", "*",
+        "1", "2", "3", "-", "0", ".", "=", "+" };
+    
+    public Calculator()
+    {
+        super(" Calculator ");
+        
+        
+        setLayout(new FlowLayout( FlowLayout.CENTER, 8, 5) );
+ 
+        resultDisplay = new JTextField( "Results will be displayed here", 16 );
+        resultDisplay.setEditable( false );
+        add( resultDisplay, BorderLayout.NORTH );
+        
+        
+        keypads = new JButton[ keys.length ];
+        
+        for (int counter = 0; counter < keys.length; counter++) {
+            keypads[ counter ] = new JButton( keys[counter] );
+            add( keypads[ counter ] );
+        }
+    }
+}

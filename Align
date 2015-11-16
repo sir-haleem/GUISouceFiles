@@ -1,0 +1,68 @@
+/*
+ *  The programs contain in this file and its associate are
+ *  properties of Indigenous Corp. 
+ *  On any ocassion you need to make modification or
+ *  take some part of this file for personal or organisational use,
+ *  a prior permission is require from Indigenous Corp
+ */
+
+package GUIEcercises;
+
+import java.awt.FlowLayout;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
+;
+
+/**
+ *
+ * @author Haleem
+ */
+public class Align extends JFrame
+{
+    
+    private JButton buttons [];
+    private JCheckBox checks[];
+    private JLabel labels[];
+    private JTextArea texts[];
+    
+    
+    private static final String[] buttonNames = { "OK", "Cancel", "Help" };
+    private static final String[] checkBox = { "Snap to grid", "Snap Crid" };
+    private static final String[] label = { "X: " , "Y"};
+    private static final String[] textArea = { "AreaX", "AreaY" };
+    
+    public Align()
+    {
+        super( "Align" );
+        setLayout( new FlowLayout() );
+        
+        buttons = new JButton[buttonNames.length];
+        checks = new JCheckBox[ checkBox.length ];
+        labels = new JLabel[ label.length ];
+        texts = new JTextArea[ textArea.length ];
+        
+        for (int i = 0; i < 3; i++) 
+        {             
+            if (i < 2) 
+            {
+                 checks[ i ] = new JCheckBox( checkBox[ i ] );
+                 texts[ i ] = new JTextArea(textArea[ i ]);
+                 labels[ i ] = new JLabel( label[ i ] );
+            }
+             
+            buttons [ i ] = new JButton( buttonNames[ i ] );
+        }
+        add( checks[ 0 ] );
+        add( checks[ 1 ] );
+        add( labels[ 0 ]);
+        add( texts[ 0 ] );
+        add( labels[ 1 ] );
+        add( texts[ 1 ] );
+        add( buttons[ 0 ] );
+        add( buttons[ 1 ] );
+        add( buttons[ 2 ] );
+    }
+}

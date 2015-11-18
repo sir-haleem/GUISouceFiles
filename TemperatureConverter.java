@@ -135,10 +135,15 @@ public class TemperatureConverter extends JFrame
         add( outro );
         // ends intialization of outro JLabel
         
-        convertValues();
+        
+        convertValues(); // invokes this method to check the type of conversion to be made
         
     } // ends the constructor
      
+     
+    // this is an inner class that handles events created by convertButton(a JButton object)
+    // this button is yet to function as expected... I just can't figure what I'm doing wrong
+    // I suggest I am not implementing the if...else block convertValues method as expected
     private class ConvertButtonHandler implements ActionListener
     {
         private double value;
@@ -156,7 +161,8 @@ public class TemperatureConverter extends JFrame
 
     }
     
-    
+    // this method is yet to function as expected... I just can't figure what I'm doing wrong
+    // I suggest I am not implementing the if...else block as expected
     private void convertValues() 
     { // starts method convertValues
     // this if else block is expected to make approriate calculations 
